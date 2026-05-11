@@ -1,0 +1,19 @@
+.wrapper{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #cbd5e1;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 2px solid white;
+    z-index: 1000;
+}
+
+
+
+.text h4{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    margin: 0;
+}
