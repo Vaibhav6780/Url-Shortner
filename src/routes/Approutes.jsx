@@ -13,10 +13,6 @@ function Approutes() {
     <Routes>
 
       <Route path="/" element={<Getstarted />} />
-
-
-
-
       <Route path="/login" element={<Login />} />
 
       <Route path="/register" element={<Register />} />
@@ -33,9 +29,6 @@ function Approutes() {
         </ProtectedRoute>
       }
       />
-
-      
-
     </Routes>
 
   );

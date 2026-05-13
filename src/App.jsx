@@ -5,17 +5,18 @@ import { BrowserRouter } from 'react-router-dom';
 import { useEffect } from "react";
 import useAuthStore from "./store/authstore";
 import './App.css';
-
+require('dotenv').config();
 function App() {
-  
-    const { setAuth,setLoading } = useAuthStore();
+
+    const { setAuth, setLoading } = useAuthStore();
+    const API_URL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         async function checkAuth() {
 
             try {
                 const response = await fetch(
-                    "http://localhost:3000/auth/check-auth",
+                    `${API_URL}/auth/check-auth`,
                     {
                         credentials: "include"
                     }
@@ -36,22 +37,22 @@ function App() {
         checkAuth();
 
     }, []);
-  return (
+    return (
 
-  
-    <>
-      <Navbar />
-<main className="main-content">
-        <Approutes />
-      </main>
-     
 
-      <Footer />
-    </>
+        <>
+            <Navbar />
+            <main className="main-content">
+                <Approutes />
+            </main>
 
-    
 
-  );
+            <Footer />
+        </>
+
+
+
+    );
 }
 
 export default App;

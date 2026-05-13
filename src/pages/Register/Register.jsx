@@ -3,6 +3,8 @@ import bg from "./../../assets/wave-haikei.svg";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
 function Register() {
+    const API_URL = import.meta.env.VITE_API_URL;
+
 
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
@@ -15,7 +17,7 @@ function Register() {
     try{
 
         const response = await fetch(
-            "http://localhost:3000/auth/register",
+           `${API_URL}/auth/register`,
             {
                 method:"POST",
                 credentials:"include",
