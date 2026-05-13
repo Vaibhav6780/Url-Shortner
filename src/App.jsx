@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { useEffect } from "react";
 import useAuthStore from "./store/authstore";
 import './App.css';
-require('dotenv').config();
+// require('dotenv').config();
 function App() {
 
     const { setAuth, setLoading } = useAuthStore();
