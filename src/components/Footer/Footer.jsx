@@ -2,7 +2,7 @@ import './Footer.css';
 
 function Footer(){
     return(<>
-    <div className="wrapper">
+    <div className="footer-wrapper">
         <div className="footer">
            <div className="text">
             <a href="https://thevaibhav.netlify.app">

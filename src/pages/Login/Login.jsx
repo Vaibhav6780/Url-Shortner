@@ -1,6 +1,12 @@
 import { useState } from "react";
-import './Login.css'
+import { useNavigate } from 'react-router-dom';
+import authstore from '../../store/authstore.js';
+import  bg  from './../../assets/wave-haikei.svg';
+import './Login.css';
+
 function Login() {
+    const navigate = useNavigate();
+    const {setAuth}=authstore();
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
     const handlesubmit = async (e) => {
@@ -18,38 +24,62 @@ function Login() {
                 })
             });
             const data = await response.json();
-            if (response.ok) alert("Login sucess");
-            else alert(data.message || "Login sucess");
+            if (response.ok) {
+                // alert("Login sucess");
+                setAuth(true);
+                navigate("/home");
+            }
+            else alert(data.message || "Login unsucessful");
 
         } catch (error) {
             console.log("Server error  : ", error);
         }
-
-
     }
 
 
     return (<>
         <section className="hero">
-            <div className="box">
+
+    <div className="box">
+
+        <div className="heading">
+            <h3>Welcome to URL Shortener</h3><br />
+            <h4>Please Login to continue</h4>
+        </div>
+
+        <div className="content">
+
+            <div className="left">
+                <img src={bg} alt="" />
+            </div>
+
+            <div className="right">
                 <form onSubmit={handlesubmit}>
-                    <input type="email"
+
+                    <input
+                        type="email"
                         placeholder="Enter Email address"
                         value={email}
-                        onChange={(e) => { setemail(e.target.value) }}
+                        onChange={(e) => setemail(e.target.value)}
                     />
-                    <input type="password"
+
+                    <input
+                        type="password"
                         placeholder="Enter password"
                         value={password}
-                        onChange={(e) => { setpassword(e.target.value) }}
+                        onChange={(e) => setpassword(e.target.value)}
                     />
 
                     <button>Login</button>
+
                 </form>
             </div>
 
+        </div>
 
-        </section>
+    </div>
+
+</section>
     </>);
 }
 

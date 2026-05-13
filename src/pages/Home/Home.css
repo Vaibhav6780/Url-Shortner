@@ -1,0 +1,196 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 20px;
+
+}
+
+.input-url{
+
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.input-url input{
+
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: #182742;
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+}
+.input-url button{
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #5da9ff;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.input-url button:hover{
+    transform: translateY(-2px);
+
+    background: #4097f5;
+}
+
+.shortened-link-box{
+
+    width: 100%;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    background: #22314d;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    text-align: center;
+}
+.shortened-link-box p{
+    color: #d6d9e0;
+
+    margin-bottom: 10px;
+}
+.shortened-link-box a{
+    color: #5da9ff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+.features-container{
+
+    width: 100%;
+    max-width: 1200px;
+    /* beckground-color:#2d3b58; */
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+.feature-card{
+
+    flex: 1;
+
+    min-width: 250px;
+    max-width: 320px;
+
+    background:#2d3b58;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.feature-card{
+    color: white;
+}
+
+.feature-card:hover{
+
+    transform: translateY(-6px);
+
+    background: #22314d;
+}
+.feature-card{
+
+    flex: 1;
+
+    min-width: 250px;
+    max-width: 320px;
+
+    background: #182742;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.feature-card:hover{
+
+    transform: translateY(-6px);
+
+    background: #22314d;
+}
+.feature-card{
+
+    flex: 1;
+
+    min-width: 250px;
+    max-width: 320px;
+
+    background: #182742;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.feature-card:hover{
+
+    transform: translateY(-6px);
+
+    background: #22314d;
+}
+.feature-card h3{
+
+    color: white;
+
+    margin-bottom: 12px;
+
+    font-size: 20px;
+}

@@ -7,3 +7,38 @@
 body{
     font-family:Arial, sans-serif;
 }
+
+:root{
+
+    --bg-main: red;
+    --bg-secondary: #12213d;
+
+    --card-bg: #182742;
+    --card-light: #22314d;
+
+    --table-header: #2d3b58;
+
+    --text-primary: #ffffff;
+    --text-secondary: #d6d9e0;
+
+    --border-color: rgba(255,255,255,0.08);
+
+    --accent-blue: #5da9ff;
+    --accent-pink: #ff4d88;
+
+    --danger-red: #ff4d4d;
+}
+html,
+body,
+#root{
+    height: 100%;
+}
+
+#root{
+    min-height: 100calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+.main-content{
+    flex: 1;
+}
