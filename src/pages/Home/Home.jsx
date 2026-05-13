@@ -1,8 +1,11 @@
 import { useState } from "react";
 import './Home.css';
 function Home() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [Url, setUrl] = useState("");
   const [shorturl, setshorturl] = useState("");
+
  const features = [
   {
     icon: "⚡",
@@ -24,7 +27,7 @@ function Home() {
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/url", {
+      const response = await fetch(`${API_URL}/url`, {
         method: "post",
         credentials: "include",
         headers: {

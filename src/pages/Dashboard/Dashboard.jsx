@@ -5,6 +5,8 @@ import { ArrowLeft, Trash2 } from "lucide-react";
 import './Dashboard.css';
 
 function Dashboard() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [urls, setUrls] = useState([]);
   const navigate = useNavigate();
   async function handleDelete(id) {
@@ -13,7 +15,7 @@ function Dashboard() {
 
       const response = await fetch(
 
-        `http://localhost:3000/url/${id}`,
+        `${API_URL}/auth/check-auth/${id}`,
 
         {
           method: "DELETE",
@@ -44,7 +46,7 @@ function Dashboard() {
     async function fetchUrls() {
       try {
         const response = await fetch(
-          "http://localhost:3000/dashboard",
+         `${API_URL}/dashboard`,
           {
             method: "GET",
             credentials: "include",
@@ -105,11 +107,11 @@ function Dashboard() {
 
                   <td>
                     <a
-                      href={`http://localhost:3000/url/${url.shortCode}`}
+                      href={`${API_URL}/url/${url.shortCode}`}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {`http://localhost:3000/url/${url.shortCode}`}
+                      {`${API_URL}/url/${url.shortCode}`}
                     </a>
                   </td>
 

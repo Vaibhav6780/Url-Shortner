@@ -4,6 +4,7 @@ import { useState } from "react";
 import useAuthStore from "../../store/authstore";
 import axios from 'axios'
 function Navbar() {
+const API_URL = import.meta.env.VITE_API_URL;
 
   const isLoggedIn = true;
   const { user,logout } = useAuthStore();
@@ -20,7 +21,7 @@ function Navbar() {
   const handleLogout = async()=>{
 
    await axios.get(
-      "http://localhost:3000/auth/logout",
+      `${API_URL}/auth/logout`,
       {
          withCredentials:true
       }
