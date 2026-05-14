@@ -15,7 +15,7 @@ function Dashboard() {
 
       const response = await fetch(
 
-        `${API_URL}/auth/check-auth/${id}`,
+        `${API_URL}/url/${id}`,
 
         {
           method: "DELETE",

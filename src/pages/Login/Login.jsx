@@ -31,7 +31,7 @@ function Login() {
                 setAuth(true);
                 navigate("/home");
             }
-            else alert(data.message || "Login unsucessful");
+            else alert("Login unsucessful");
 
         } catch (error) {
             console.log("Server error  : ", error);
