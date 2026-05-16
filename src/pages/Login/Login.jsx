@@ -63,8 +63,7 @@ function Login() {
           <h3>Login Failed</h3>
 
           <p>
-            No account found with this email.
-            Please register first.
+          {error}
           </p>
         </div>
 
