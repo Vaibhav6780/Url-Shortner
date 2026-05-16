@@ -1,6 +1,13 @@
 import './Footer.css';
 
 function Footer(){
+    const hidefooter =
+    location.pathname === "/login" || location.pathname=="/register"  || location.pathname=="/";
+
+  if (hidefooter) {
+    // console.log(user);
+    return null;
+  }
     return(<>
     <div className="footer-wrapper">
         <div className="footer">

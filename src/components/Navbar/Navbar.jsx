@@ -12,10 +12,10 @@ const API_URL = import.meta.env.VITE_API_URL;
   const [open, setOpen] = useState(false);
 
   const hideNavbar =
-    location.pathname === "/login" || location.pathname=="/register"
+    location.pathname === "/login" || location.pathname=="/register"  || location.pathname=="/";
 
   if (hideNavbar) {
-    console.log(user);
+    // console.log(user);
     return null;
   }
   const handleLogout = async()=>{

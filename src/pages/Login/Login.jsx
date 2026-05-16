@@ -6,7 +6,7 @@ import './Login.css';
 
 function Login() {
     const API_URL = import.meta.env.VITE_API_URL;
-
+    const [error, setError] = useState("");
     const navigate = useNavigate();
     const {setAuth}=authstore();
     const [email, setemail] = useState("");
@@ -15,6 +15,7 @@ function Login() {
         e.preventDefault();
         try {
             const response = await fetch(`${API_URL}/auth/login`, {
+            
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -27,14 +28,19 @@ function Login() {
             });
             const data = await response.json();
             if (response.ok) {
-                // alert("Login sucess");
                 setAuth(true);
                 navigate("/home");
             }
-            else alert("Login unsucessful");
+            else{
+            setError(data.message);
+            return;
+        }
 
         } catch (error) {
-            console.log("Server error  : ", error);
+           
+        console.log(error);
+        setError("Server error occurred");
+      
         }
     }
 
@@ -43,7 +49,38 @@ function Login() {
         <section className="hero">
 
     <div className="box">
+{
+  error && (
+    <div className="auth-banner">
 
+      <div className="banner-content">
+
+        <div className="banner-icon">
+          !
+        </div>
+
+        <div className="banner-text">
+          <h3>Login Failed</h3>
+
+          <p>
+            No account found with this email.
+            Please register first.
+          </p>
+        </div>
+
+      </div>
+
+      <button
+        type="button"
+        onClick={() => navigate("/register")}
+        className="banner-btn"
+      >
+        Register Now
+      </button>
+
+    </div>
+  )
+}
         <div className="heading">
             <h3>Welcome to URL Shortener</h3><br />
             <h4>Please Login to continue</h4>
@@ -75,6 +112,7 @@ function Login() {
                     <button>Login</button>
 
                 </form>
+              
             </div>
 
         </div>
