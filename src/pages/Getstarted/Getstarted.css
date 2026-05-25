@@ -1,77 +1,286 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+.lp-root {
+  background: #080a0f;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8eaf0;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
-body{
-    font-family: "Poppins", sans-serif;
+.lp-bg-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56,182,255,0.08) 0%, transparent 70%);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
-.landing-page{
-
-    height: 100vh;
-
-    background:  #000000;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
+.lp-bg-glow2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(120,80,255,0.07) 0%, transparent 70%);
+  top: 200px;
+  left: 10%;
+  pointer-events: none;
 }
 
-.hero-content{
-
-    text-align: center;
-
-    color: white;
-
-    max-width: 700px;
+/* ── Navbar ── */
+.lp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 36px;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-content h1{
-
-    font-size: 72px;
-    font-weight: 600;
-
-    margin-bottom: 20px;
+.lp-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
 }
 
-.hero-content p{
-
-    font-size: 22px;
-
-    color: #d6d9e0;
-
-    line-height: 1.6;
-
-    margin-bottom: 35px;
+.lp-logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38b6ff;
+  box-shadow: 0 0 10px #38b6ff99;
 }
 
-.hero-content button{
-
-    padding: 14px 34px;
-
-    border: none;
-
-    border-radius: 999px;
-
-    background: #5da9ff;
-
-    color: white;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
+.lp-nav-links {
+  display: flex;
+  gap: 28px;
 }
 
-.hero-content button:hover{
-
-    background: #4097f5;
-
-    transform: translateY(-2px);
+.lp-nav-link {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #8b909e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  transition: color 0.2s;
+  padding: 0;
 }
+
+.lp-nav-link:hover {
+  color: #e8eaf0;
+}
+
+.lp-nav-cta {
+  background: #38b6ff14;
+  border: 0.5px solid #38b6ff55;
+  color: #38b6ff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.lp-nav-cta:hover {
+  background: #38b6ff22;
+}
+
+/* ── Hero ── */
+.lp-hero {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 52px 36px 0;
+}
+
+.lp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #38b6ff0f;
+  border: 0.5px solid #38b6ff33;
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 12px;
+  color: #38b6ff;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.lp-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #38b6ff;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.lp-h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.lp-h1-accent {
+  color: #38b6ff;
+}
+
+.lp-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: #8b909e;
+  line-height: 1.6;
+  margin: 0 auto 36px;
+  max-width: 380px;
+}
+
+/* ── Get Started button ── */
+.lp-getstarted-btn {
+  background: #38b6ff;
+  color: #080a0f;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 48px;
+}
+
+.lp-getstarted-btn:hover {
+  background: #5ec5ff;
+}
+
+.lp-getstarted-btn:active {
+  transform: scale(0.97);
+}
+
+.lp-hint {
+  font-size: 12px;
+  color: #4a505f;
+  margin-bottom: 48px;
+}
+
+/* ── Feature cards ── */
+.lp-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 36px 36px;
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.lp-feat {
+  background: #0e1118;
+  border: 0.5px solid #ffffff0f;
+  border-radius: 14px;
+  padding: 18px 16px;
+  text-align: left;
+}
+
+.lp-feat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+.lp-feat-icon-blue {
+  background: #38b6ff12;
+  border: 0.5px solid #38b6ff22;
+}
+
+.lp-feat-icon-amber {
+  background: #f5a62312;
+  border: 0.5px solid #f5a62322;
+}
+
+.lp-feat-icon-purple {
+  background: #9b6fff12;
+  border: 0.5px solid #9b6fff22;
+}
+
+.lp-feat-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #d0d3de;
+  margin-bottom: 4px;
+}
+
+.lp-feat-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: #555b6b;
+  line-height: 1.5;
+}
+
+/* ── Social proof ── */
+.lp-social-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 36px 28px;
+  font-size: 12px;
+  color: #4a505f;
+  position: relative;
+  z-index: 2;
+}
+
+.lp-avatars {
+  display: flex;
+}
+
+.lp-av {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid #080a0f;
+  margin-left: -6px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.lp-av:first-child {
+  margin-left: 0;
+}
+
+.av1 { background: #1d4a6e; color: #38b6ff; }
+.av2 { background: #3a1d6e; color: #9b6fff; }
+.av3 { background: #1d6e40; color: #34d399; }
+.av4 { background: #6e4a1d; color: #f5a623; }
